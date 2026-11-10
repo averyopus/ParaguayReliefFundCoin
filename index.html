@@ -4,138 +4,310 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="ParaguayReliefFundCoin is an independent community meme-token project inspired by Paraguay.">
-  <meta name="theme-color" content="#f6f3e9">
+  <meta name="theme-color" content="#f3efe8">
   <title>ParaguayReliefFundCoin — Inspired by Paraguay</title>
   <style>
     :root {
       color-scheme: light;
-      --paper: #f6f3e9;
-      --ink: #122a24;
-      --green: #164b3b;
-      --green-dark: #0c3027;
-      --red: #d9434b;
-      --blue: #315ca8;
-      --gold: #efc66d;
-      --muted: #52665d;
-      --line: rgba(18,42,36,.15);
+      --paper: #f3efe8;
+      --bg: #f7f4ef;
+      --ink: #102b28;
+      --green: #10372f;
+      --green-soft: #24634d;
+      --red: #d7242d;
+      --blue: #1b5aa7;
+      --gold: #f2d57a;
+      --muted: #5a675f;
+      --line: rgba(16,43,40,.14);
       --card: rgba(255,255,255,.72);
+      --shadow: 0 28px 70px rgba(16,45,39,.15);
+      --banner-height: clamp(420px, 55vw, 620px);
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      min-height: 100vh;
       color: var(--ink);
       background: var(--paper);
       font: 16px/1.65 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
+    img { max-width: 100%; display: block; }
     a { color: var(--green); }
-    .wrap { width: min(100% - 2rem, 1060px); margin-inline: auto; }
-    .topline { height: 7px; background: linear-gradient(to bottom, var(--red) 0 33.33%, #fff 33.33% 66.66%, var(--blue) 66.66%); }
-    header { padding: 1.15rem 0; border-bottom: 1px solid var(--line); }
-    .header-inner { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
-    .brand { display:flex; align-items:center; gap:.75rem; color:var(--ink); text-decoration:none; font-weight:800; letter-spacing:-.02em; }
-    .brand img { width:46px; height:46px; }
-    .lang { display:flex; gap:.35rem; padding:.25rem; border:1px solid var(--line); border-radius:999px; background:#fff9; }
-    .lang button { border:0; border-radius:999px; padding:.45rem .8rem; color:var(--green-dark); background:transparent; font:inherit; font-size:.86rem; font-weight:750; cursor:pointer; }
-    .lang button[aria-pressed="true"] { color:white; background:var(--green); }
-    button:focus-visible, a:focus-visible { outline:3px solid var(--blue); outline-offset:3px; }
-    main { padding: clamp(2.5rem, 7vw, 6rem) 0 4rem; }
-    .hero { position:relative; isolation:isolate; display:grid; grid-template-columns:minmax(0, 1fr) 300px; align-items:center; gap:clamp(1rem, 5vw, 4rem); min-height:390px; padding:clamp(1.5rem, 5vw, 4rem); overflow:hidden; border-radius:2rem; color:#fff; background:radial-gradient(ellipse at 82% 18%, #36765a 0, transparent 34%), linear-gradient(135deg, var(--green-dark), var(--green)); box-shadow:0 24px 60px rgba(19,59,46,.16); }
-    .hero::before, .hero::after { position:absolute; z-index:-1; content:""; border:1px solid rgba(255,255,255,.12); border-radius:50%; }
-    .hero::before { width:420px; height:420px; right:40px; top:-230px; }
-    .hero::after { width:540px; height:540px; right:-20px; top:-285px; }
-    .eyebrow { margin:0 0 .8rem; color:#f6d789; font-size:.78rem; font-weight:800; text-transform:uppercase; letter-spacing:.16em; }
-    h1 { max-width:700px; margin:0; font-size:clamp(2.7rem, 7vw, 5.3rem); line-height:.99; letter-spacing:-.055em; }
-    .intro { max-width:600px; margin:1.2rem 0 0; color:#e4eee6; font-size:clamp(1.05rem, 2.2vw, 1.23rem); }
-    .hero-art { position:relative; display:grid; place-items:center; min-height:250px; }
-    .mascot { width:min(100%, 265px); height:auto; filter:drop-shadow(0 20px 24px rgba(0,0,0,.24)); animation:float 5s ease-in-out infinite; }
-    .spark { position:absolute; color:var(--gold); font-size:1.7rem; }
-    .spark.one { top:15%; right:15%; }.spark.two { bottom:16%; left:13%; font-size:1.1rem; }
-    @keyframes float { 0%,100% { transform:translateY(0) rotate(-2deg); } 50% { transform:translateY(-9px) rotate(2deg); } }
-    .section-heading { margin:3.3rem 0 1rem; }
-    .section-heading span { color:var(--red); font-size:.78rem; font-weight:800; letter-spacing:.15em; text-transform:uppercase; }
-    .section-heading h2 { margin:.25rem 0 0; font-size:clamp(1.7rem, 4vw, 2.4rem); letter-spacing:-.04em; }
-    .cards { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:1rem; }
-    .card { padding:clamp(1.25rem, 3vw, 1.8rem); border:1px solid var(--line); border-radius:1.25rem; background:var(--card); box-shadow:0 12px 30px rgba(19,59,46,.045); }
-    .card h3 { margin:0 0 .5rem; font-size:1.08rem; }
-    .card p { margin:0; color:var(--muted); }
-    .icon { display:grid; place-items:center; width:42px; height:42px; margin-bottom:1rem; border-radius:14px; color:var(--green-dark); background:#e2edda; font-size:1.3rem; }
-    .notice { margin-top:1rem; border-left:5px solid var(--gold); background:#fffdf6; }
-    .notice h3 { display:flex; align-items:center; gap:.5rem; }
-    .notice p { color:#43564d; font-size:.94rem; }
-    footer { padding:1.5rem 0 2.5rem; border-top:1px solid var(--line); color:var(--muted); font-size:.9rem; }
-    [hidden] { display:none !important; }
-    @media (max-width:720px) {
-      .hero { grid-template-columns:1fr; min-height:0; text-align:center; }
-      .hero-art { grid-row:1; min-height:175px; }
-      .mascot { width:175px; }
-      .hero::before { right:calc(50% - 210px); }.hero::after { right:calc(50% - 270px); }
-      .cards { grid-template-columns:1fr; }
+    .wrap { width: min(100% - 2rem, 1200px); margin: 0 auto; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(243, 239, 232, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: .75rem;
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: -.03em;
+    }
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 10px 22px rgba(0,0,0,.08);
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      border: 1px solid rgba(16,43,40,.15);
+      border-radius: 999px;
+      padding: .45rem .8rem;
+      background: rgba(255,255,255,.48);
+      font-size: .79rem;
+      font-weight: 700;
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+
+    .hero {
+      position: relative;
+      min-height: var(--banner-height);
+      display: grid;
+      place-items: center;
+      background:
+        linear-gradient(90deg, rgba(11,29,28,.72), rgba(11,29,28,.15) 38%, rgba(14,31,31,.65) 100%),
+        url("Paraguay_ Nuestra Tierra, Nuestro Orgullo.png") center/cover no-repeat;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 180px;
+      background: linear-gradient(to top, rgba(243,239,232,.95), rgba(243,239,232,0));
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: min(100% - 2rem, 1200px);
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(250px, 520px);
+      align-items: end;
+      gap: clamp(1rem, 2vw, 2rem);
+      padding: 3rem 0 2.6rem;
+    }
+    .hero-copy {
+      color: #fff;
+      text-shadow: 0 8px 26px rgba(0,0,0,.18);
+    }
+    .eyebrow {
+      margin: 0 0 1rem;
+      color: #f8eba9;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-size: .76rem;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(3rem, 6vw, 7rem);
+      line-height: .9;
+      letter-spacing: -.055em;
+    }
+    .intro {
+      max-width: 630px;
+      margin: 1rem 0 0;
+      color: rgba(255,255,255,.9);
+      font-size: clamp(1.05rem, 2vw, 1.28rem);
+    }
+    .hero-art {
+      justify-self: end;
+      width: min(100%, 560px);
+      transform: translateY(2rem);
+      filter: drop-shadow(0 22px 40px rgba(7,22,17,.3));
+    }
+    .bird {
+      width: min(100%, 560px);
+      height: auto;
+      max-height: 480px;
+      object-fit: contain;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      padding: clamp(2.5rem, 6vw, 5rem) 0 4rem;
+    }
+    .section-head {
+      margin-bottom: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
+    }
+    .section-head span {
+      color: var(--red);
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -.05em;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.2rem;
+    }
+    .card {
+      padding: clamp(1.25rem, 2vw, 1.7rem);
+      border: 1px solid var(--line);
+      border-radius: 1.4rem;
+      background: var(--card);
+      box-shadow: 0 18px 38px rgba(16,43,40,.04);
+    }
+    .card-icon {
+      display: inline-grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      margin-bottom: .9rem;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(26,95,80,.1), rgba(20,63,88,.08));
+      font-size: 1.3rem;
+    }
+    .card h3 {
+      margin: 0 0 .45rem;
+      font-size: 1.1rem;
+    }
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+    .notice {
+      margin-top: 1.25rem;
+      border-left: 5px solid var(--gold);
+      background: linear-gradient(135deg, rgba(255,244,196,.4), rgba(255,255,255,.68));
+    }
+    .notice h3 { margin: 0 0 .45rem; }
+    .notice p { color: #3a4e43; }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 1.5rem 0 2.5rem;
+      color: var(--muted);
+      font-size: .94rem;
+      background: rgba(255,255,255,.3);
+    }
+
+    @media (max-width: 860px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        align-items: end;
+        padding-bottom: 2rem;
+      }
+      .hero-art {
+        justify-self: center;
+        width: min(100%, 400px);
+        transform: none;
+      }
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 560px) {
+      .topbar-inner { flex-wrap: wrap; }
+      .hero {
+        min-height: 420px;
+      }
+      .hero-copy { text-align: center; }
+      .intro { margin-left: auto; margin-right: auto; }
+      .eyebrow { letter-spacing: .12em; }
+      .pill {
+        letter-spacing: .08em;
+        font-size: .68rem;
+      }
     }
     @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior:auto; }
-      *, *::before, *::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
     }
   </style>
 </head>
 <body>
-  <div class="topline" aria-hidden="true"></div>
-  <header>
-    <div class="wrap header-inner">
-      <a class="brand" href="#home"><img src="hummingbird.svg" alt=""><span>ParaguayReliefFundCoin</span></a>
-      <nav class="lang" aria-label="Language / Idioma">
-        <button type="button" data-lang="en" aria-pressed="true">English</button>
-        <button type="button" data-lang="es" aria-pressed="false">Español</button>
-      </nav>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#home" aria-label="ParaguayReliefFundCoin home">
+        <img class="brand-mark" src="Paraguayan Songbird Mascot on Branch.png" alt="ParaguayReliefFundCoin mascot">
+        <span>ParaguayReliefFundCoin</span>
+      </a>
+      <span class="pill">Community project</span>
     </div>
   </header>
-  <main class="wrap" id="home">
-    <section class="hero" aria-labelledby="page-title">
-      <div class="hero-copy" lang="en">
+
+  <section class="hero" id="home" aria-labelledby="page-title">
+    <div class="hero-inner">
+      <div class="hero-copy">
         <p class="eyebrow">Inspired by Paraguay · Built by the community</p>
-        <h1 id="page-title">A little bird.<br>A big community.</h1>
-        <p class="intro">An independent meme-token project inspired by Paraguay and the idea that communities can connect directly, peer to peer.</p>
+        <h1 id="page-title">Paraguay<br>Relief Fund</h1>
+        <p class="intro">An independent community meme-token project inspired by Paraguay and the idea that communities can connect directly, peer to peer.</p>
       </div>
-      <div class="hero-copy" lang="es" hidden>
-        <p class="eyebrow">Inspirado en Paraguay · Construido por la comunidad</p>
-        <h1>Un pequeño pájaro.<br>Una gran comunidad.</h1>
-        <p class="intro">Un proyecto independiente de memecoin inspirado en Paraguay y en la idea de que las comunidades pueden conectarse directamente, de persona a persona.</p>
+      <div class="hero-art">
+        <img class="bird" src="Paraguayan Songbird Mascot on Branch.png" alt="Paraguayan songbird mascot on a branch in red, white, and blue colors">
       </div>
-      <div class="hero-art" aria-hidden="true">
-        <span class="spark one">✦</span><span class="spark two">✧</span>
-        <img class="mascot" src="hummingbird.svg" alt="">
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <section lang="en">
-      <div class="section-heading"><span>Who we are</span><h2>A community with a vision</h2></div>
-      <div class="cards">
-        <article class="card"><div class="icon" aria-hidden="true">✦</div><h3>About the project</h3><p>The project’s long-term aspiration is to explore peer-to-peer use, if community adoption, technology, and applicable laws allow. This is a vision—not a promise of acceptance, utility, or value. No merchants, partners, or liquidity backers are represented here as confirmed.</p></article>
-        <article class="card"><div class="icon" aria-hidden="true">♡</div><h3>Community support</h3><p>We’re exploring the possibility of donating part of the project’s funds to Fundación Paraguaya and are looking into other organizations as well. This is not yet a confirmed donation commitment or partnership. We’ll publish details if a donation plan is established.</p></article>
-      </div>
-      <aside class="card notice"><h3><span aria-hidden="true">ⓘ</span> Important notice</h3><p>This is an independent meme-token project, not affiliated with or endorsed by the Government of Paraguay, Banco Central del Paraguay (BCP), any bank, public fund, or financial institution. It is not government-backed, legal tender, or a claim on oil or public funds.</p></aside>
-    </section>
+  <main class="wrap">
+    <div class="section-head">
+      <span>About us</span>
+      <h2>A little bird. A big community.</h2>
+    </div>
 
-    <section lang="es" hidden>
-      <div class="section-heading"><span>Quiénes somos</span><h2>Una comunidad con una visión</h2></div>
-      <div class="cards">
-        <article class="card"><div class="icon" aria-hidden="true">✦</div><h3>Sobre el proyecto</h3><p>La aspiración a largo plazo del proyecto es explorar el uso entre pares, si la adopción comunitaria, la tecnología y las leyes aplicables lo permiten. Es una visión, no una promesa de aceptación, utilidad o valor. Aquí no se presentan como confirmados comercios, socios ni proveedores de liquidez.</p></article>
-        <article class="card"><div class="icon" aria-hidden="true">♡</div><h3>Apoyo comunitario</h3><p>Estamos explorando la posibilidad de donar parte de los fondos del proyecto a Fundación Paraguaya y también investigando otras organizaciones. Aún no existe un compromiso de donación ni una alianza confirmada. Publicaremos los detalles si se establece un plan de donación.</p></article>
-      </div>
-      <aside class="card notice"><h3><span aria-hidden="true">ⓘ</span> Aviso importante</h3><p>Este es un proyecto independiente de memecoin, no afiliado ni respaldado por el Gobierno de Paraguay, el Banco Central del Paraguay (BCP), ningún banco, fondo público o institución financiera. No cuenta con respaldo gubernamental, no es moneda de curso legal ni representa un derecho sobre petróleo o fondos públicos.</p></aside>
-    </section>
+    <div class="cards">
+      <article class="card">
+        <div class="card-icon" aria-hidden="true">✦</div>
+        <h3>About the project</h3>
+        <p>The project’s long-term aspiration is to explore peer-to-peer use, if community adoption, technology, and applicable laws allow. This is a vision—not a promise of acceptance, utility, or value. No merchants, partners, or liquidity backers are represented here as confirmed.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon" aria-hidden="true">♡</div>
+        <h3>Community support</h3>
+        <p>We’re exploring the possibility of donating part of the project’s funds to Fundación Paraguaya and other carefully vetted organizations. This is not yet a confirmed donation commitment or partnership. We’ll publish details if a donation plan is established.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon" aria-hidden="true">⚑</div>
+        <h3>National pride</h3>
+        <p>Our visual style draws inspiration from the colors and spirit of Paraguay’s national flag and culture. It is not a government seal, logo, or endorsement. It is community-inspired creative expression rooted in national pride.</p>
+      </article>
+    </div>
+
+    <aside class="card notice">
+      <h3>Important notice</h3>
+      <p>This is an independent meme-token project, not affiliated with or endorsed by the Government of Paraguay, Banco Central del Paraguay (BCP), any bank, public fund, or financial institution. It is not government-backed, legal tender, or a claim on oil or public funds.</p>
+    </aside>
   </main>
-  <footer><div class="wrap"><span lang="en">Unofficial community project. Verify information independently before acting on it.</span><span lang="es" hidden>Proyecto comunitario no oficial. Verifica la información de forma independiente antes de actuar.</span></div></footer>
-  <script>
-    const buttons = document.querySelectorAll('[data-lang]');
-    const languageSections = document.querySelectorAll('[lang="en"], [lang="es"]');
-    buttons.forEach((button) => button.addEventListener('click', () => {
-      const selected = button.dataset.lang;
-      document.documentElement.lang = selected;
-      languageSections.forEach((section) => { section.hidden = section.lang !== selected; });
-      buttons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
-    }));
-  </script>
+
+  <footer>
+    <div class="wrap">Unofficial community project. Project details may change; verify information independently before acting on it.</div>
+  </footer>
 </body>
 </html>
