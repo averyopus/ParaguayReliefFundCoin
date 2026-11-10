@@ -34,7 +34,6 @@
     img { max-width: 100%; display: block; }
     a { color: var(--green); }
     .wrap { width: min(100% - 2rem, 1200px); margin: 0 auto; }
-
     .topbar {
       position: sticky;
       top: 0;
@@ -81,7 +80,6 @@
       text-transform: uppercase;
       letter-spacing: .12em;
     }
-
     .hero {
       position: relative;
       min-height: var(--banner-height);
@@ -109,10 +107,7 @@
       gap: clamp(1rem, 2vw, 2rem);
       padding: 3rem 0 2.6rem;
     }
-    .hero-copy {
-      color: #fff;
-      text-shadow: 0 8px 26px rgba(0,0,0,.18);
-    }
+    .hero-copy { color: #fff; text-shadow: 0 8px 26px rgba(0,0,0,.18); }
     .eyebrow {
       margin: 0 0 1rem;
       color: #f8eba9;
@@ -121,128 +116,35 @@
       letter-spacing: .16em;
       font-size: .76rem;
     }
-    h1 {
-      margin: 0;
-      font-size: clamp(3rem, 6vw, 7rem);
-      line-height: .9;
-      letter-spacing: -.055em;
-    }
-    .intro {
-      max-width: 630px;
-      margin: 1rem 0 0;
-      color: rgba(255,255,255,.9);
-      font-size: clamp(1.05rem, 2vw, 1.28rem);
-    }
-    .hero-art {
-      justify-self: end;
-      width: min(100%, 560px);
-      transform: translateY(2rem);
-      filter: drop-shadow(0 22px 40px rgba(7,22,17,.3));
-    }
-    .bird {
-      width: min(100%, 560px);
-      height: auto;
-      max-height: 480px;
-      object-fit: contain;
-    }
-
-    main {
-      position: relative;
-      z-index: 1;
-      padding: clamp(2.5rem, 6vw, 5rem) 0 4rem;
-    }
-    .section-head {
-      margin-bottom: 1.2rem;
-      display: flex;
-      flex-direction: column;
-      gap: .4rem;
-    }
-    .section-head span {
-      color: var(--red);
-      font-size: .8rem;
-      font-weight: 800;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-    }
-    .section-head h2 {
-      margin: 0;
-      font-size: clamp(2rem, 4vw, 3rem);
-      letter-spacing: -.05em;
-    }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
-      margin-top: 1.2rem;
-    }
-    .card {
-      padding: clamp(1.25rem, 2vw, 1.7rem);
-      border: 1px solid var(--line);
-      border-radius: 1.4rem;
-      background: var(--card);
-      box-shadow: 0 18px 38px rgba(16,43,40,.04);
-    }
-    .card-icon {
-      display: inline-grid;
-      place-items: center;
-      width: 42px;
-      height: 42px;
-      margin-bottom: .9rem;
-      border-radius: 12px;
-      background: linear-gradient(135deg, rgba(26,95,80,.1), rgba(20,63,88,.08));
-      font-size: 1.3rem;
-    }
-    .card h3 {
-      margin: 0 0 .45rem;
-      font-size: 1.1rem;
-    }
-    .card p {
-      margin: 0;
-      color: var(--muted);
-    }
-    .notice {
-      margin-top: 1.25rem;
-      border-left: 5px solid var(--gold);
-      background: linear-gradient(135deg, rgba(255,244,196,.4), rgba(255,255,255,.68));
-    }
+    h1 { margin: 0; font-size: clamp(3rem, 6vw, 7rem); line-height: .9; letter-spacing: -.055em; }
+    .intro { max-width: 630px; margin: 1rem 0 0; color: rgba(255,255,255,.9); font-size: clamp(1.05rem, 2vw, 1.28rem); }
+    .hero-art { justify-self: end; width: min(100%, 560px); transform: translateY(2rem); filter: drop-shadow(0 22px 40px rgba(7,22,17,.3)); }
+    .bird { width: min(100%, 560px); height: auto; max-height: 480px; object-fit: contain; }
+    main { position: relative; z-index: 1; padding: clamp(2.5rem, 6vw, 5rem) 0 4rem; }
+    .section-head { margin-bottom: 1.2rem; display: flex; flex-direction: column; gap: .4rem; }
+    .section-head span { color: var(--red); font-size: .8rem; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+    .section-head h2 { margin: 0; font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -.05em; }
+    .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 1.2rem; }
+    .card { padding: clamp(1.25rem, 2vw, 1.7rem); border: 1px solid var(--line); border-radius: 1.4rem; background: var(--card); box-shadow: 0 18px 38px rgba(16,43,40,.04); }
+    .card-icon { display: inline-grid; place-items: center; width: 42px; height: 42px; margin-bottom: .9rem; border-radius: 12px; background: linear-gradient(135deg, rgba(26,95,80,.1), rgba(20,63,88,.08)); font-size: 1.3rem; }
+    .card h3 { margin: 0 0 .45rem; font-size: 1.1rem; }
+    .card p { margin: 0; color: var(--muted); }
+    .notice { margin-top: 1.25rem; border-left: 5px solid var(--gold); background: linear-gradient(135deg, rgba(255,244,196,.4), rgba(255,255,255,.68)); }
     .notice h3 { margin: 0 0 .45rem; }
     .notice p { color: #3a4e43; }
-
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 1.5rem 0 2.5rem;
-      color: var(--muted);
-      font-size: .94rem;
-      background: rgba(255,255,255,.3);
-    }
-
+    footer { border-top: 1px solid var(--line); padding: 1.5rem 0 2.5rem; color: var(--muted); font-size: .94rem; background: rgba(255,255,255,.3); }
     @media (max-width: 860px) {
-      .hero-inner {
-        grid-template-columns: 1fr;
-        align-items: end;
-        padding-bottom: 2rem;
-      }
-      .hero-art {
-        justify-self: center;
-        width: min(100%, 400px);
-        transform: none;
-      }
-      .cards {
-        grid-template-columns: 1fr;
-      }
+      .hero-inner { grid-template-columns: 1fr; align-items: end; padding-bottom: 2rem; }
+      .hero-art { justify-self: center; width: min(100%, 400px); transform: none; }
+      .cards { grid-template-columns: 1fr; }
     }
     @media (max-width: 560px) {
       .topbar-inner { flex-wrap: wrap; }
-      .hero {
-        min-height: 420px;
-      }
+      .hero { min-height: 420px; }
       .hero-copy { text-align: center; }
       .intro { margin-left: auto; margin-right: auto; }
       .eyebrow { letter-spacing: .12em; }
-      .pill {
-        letter-spacing: .08em;
-        font-size: .68rem;
-      }
+      .pill { letter-spacing: .08em; font-size: .68rem; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -260,7 +162,6 @@
       <span class="pill">Community project</span>
     </div>
   </header>
-
   <section class="hero" id="home" aria-labelledby="page-title">
     <div class="hero-inner">
       <div class="hero-copy">
@@ -273,41 +174,35 @@
       </div>
     </div>
   </section>
-
   <main class="wrap">
     <div class="section-head">
       <span>About us</span>
       <h2>A little bird. A big community.</h2>
     </div>
-
     <div class="cards">
       <article class="card">
         <div class="card-icon" aria-hidden="true">✦</div>
         <h3>About the project</h3>
         <p>The project’s long-term aspiration is to explore peer-to-peer use, if community adoption, technology, and applicable laws allow. This is a vision—not a promise of acceptance, utility, or value. No merchants, partners, or liquidity backers are represented here as confirmed.</p>
       </article>
-
       <article class="card">
         <div class="card-icon" aria-hidden="true">♡</div>
         <h3>Community support</h3>
         <p>We’re exploring the possibility of donating part of the project’s funds to Fundación Paraguaya and other carefully vetted organizations. This is not yet a confirmed donation commitment or partnership. We’ll publish details if a donation plan is established.</p>
       </article>
-
       <article class="card">
         <div class="card-icon" aria-hidden="true">⚑</div>
         <h3>National pride</h3>
         <p>Our visual style draws inspiration from the colors and spirit of Paraguay’s national flag and culture. It is not a government seal, logo, or endorsement. It is community-inspired creative expression rooted in national pride.</p>
       </article>
     </div>
-
     <aside class="card notice">
       <h3>Important notice</h3>
       <p>This is an independent meme-token project, not affiliated with or endorsed by the Government of Paraguay, Banco Central del Paraguay (BCP), any bank, public fund, or financial institution. It is not government-backed, legal tender, or a claim on oil or public funds.</p>
     </aside>
   </main>
-
   <footer>
-    <div class="wrap">Unofficial community project. Project details may change; verify information independently before acting on it.</div>
+    <div class="wrap">Project details may change; verify information independently before acting on it.</div>
   </footer>
 </body>
 </html>
