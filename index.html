@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Discover ParaguayReliefFundCoin: a community-driven, Paraguay-inspired meme-token project. Learn about the idea and how to get involved.">
+  <meta name="description" content="Discover ParaguayReliefFundCoin: a community-driven, Paraguay-inspired meme-token project built around pride, creativity, and participation.">
   <meta name="theme-color" content="#f3efe8">
-  <title>ParaguayReliefFundCoin — Join the Community</title>
+  <title>ParaguayReliefFundCoin — Pride in Every Feather</title>
   <style>
     :root {
       color-scheme: light;
@@ -18,7 +18,7 @@
       --gold: #f2d57a;
       --muted: #5a675f;
       --line: rgba(16,43,40,.14);
-      --card: rgba(255,255,255,.82);
+      --card: rgba(255,255,255,.86);
       --banner-height: clamp(440px, 58vw, 680px);
     }
     * { box-sizing: border-box; }
@@ -41,7 +41,7 @@
     .hero-copy { color: white; text-shadow: 0 5px 24px rgba(0,0,0,.3); }
     .eyebrow { margin: 0 0 1rem; color: #ffeba0; font-size: .76rem; font-weight: 850; text-transform: uppercase; letter-spacing: .16em; }
     h1 { margin: 0; max-width: 780px; font-size: clamp(3rem,7vw,7.2rem); line-height: .91; letter-spacing: -.06em; }
-    .intro { max-width: 660px; margin: 1.2rem 0 0; color: rgba(255,255,255,.94); font-size: clamp(1.07rem,2vw,1.28rem); }
+    .intro { max-width: 660px; margin: 1.2rem 0 0; color: rgba(255,255,255,.96); font-size: clamp(1.07rem,2vw,1.28rem); }
     .actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.6rem; }
     .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: .72rem 1.15rem; border: 2px solid transparent; border-radius: 999px; background: var(--gold); color: #1c2a23; font-weight: 850; text-decoration: none; box-shadow: 0 10px 24px rgba(0,0,0,.16); transition: transform .18s ease, box-shadow .18s ease; }
     .button:hover { transform: translateY(-2px); box-shadow: 0 14px 28px rgba(0,0,0,.2); }
@@ -50,7 +50,7 @@
     .bird { width: 100%; max-height: 500px; object-fit: contain; }
     main { padding: clamp(2.5rem,6vw,5rem) 0 4rem; }
     .section { margin-bottom: clamp(3rem,7vw,5.5rem); scroll-margin-top: 95px; }
-    .section-head { max-width: 760px; margin-bottom: 1.4rem; }
+    .section-head { max-width: 800px; margin-bottom: 1.4rem; }
     .section-head span { color: var(--red); font-size: .78rem; font-weight: 850; letter-spacing: .15em; text-transform: uppercase; }
     .section-head h2 { margin: .25rem 0 .55rem; font-size: clamp(2rem,4.5vw,3.3rem); line-height: 1.05; letter-spacing: -.05em; }
     .section-head p { margin: 0; color: var(--muted); font-size: 1.08rem; }
@@ -59,15 +59,22 @@
     .card-icon { display: grid; place-items: center; width: 46px; height: 46px; margin-bottom: 1rem; border-radius: 14px; color: var(--green); background: linear-gradient(135deg,rgba(26,95,80,.12),rgba(20,63,88,.1)); font-size: 1.35rem; }
     .card h3 { margin: 0 0 .5rem; font-size: 1.12rem; }
     .card p { margin: 0; color: var(--muted); }
+    .values { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: .8rem; margin-top: 1.3rem; }
+    .value { display: flex; align-items: center; gap: .75rem; padding: 1rem 1.1rem; border: 1px solid var(--line); border-radius: 1rem; background: rgba(255,255,255,.58); font-weight: 750; }
+    .value span { color: var(--red); font-size: 1.3rem; }
     .steps { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1rem; counter-reset: step; }
     .step { position: relative; padding-top: 4.2rem; }
     .step::before { counter-increment: step; content: "0" counter(step); position: absolute; top: 1.2rem; left: 1.4rem; color: var(--red); font-size: 1.8rem; line-height: 1; font-weight: 900; letter-spacing: -.06em; }
     .token-note { margin-top: 1.2rem; border-left: 5px solid var(--gold); background: linear-gradient(135deg,rgba(255,244,196,.48),rgba(255,255,255,.8)); }
     .token-note h3 { margin: 0 0 .4rem; }
     .token-note p { margin: 0; color: #3a4e43; }
+    .faq { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; }
+    .faq details { padding: 1.2rem 1.3rem; border: 1px solid var(--line); border-radius: 1rem; background: var(--card); }
+    .faq summary { cursor: pointer; font-weight: 800; }
+    .faq details p { margin: .7rem 0 0; color: var(--muted); }
     .closing { display: grid; grid-template-columns: 1.2fr .8fr; align-items: center; gap: 2rem; padding: clamp(1.5rem,4vw,3rem); border-radius: 1.6rem; color: white; background: linear-gradient(125deg,#10372f,#174e53 60%,#1b5aa7); box-shadow: 0 24px 60px rgba(16,43,40,.18); }
     .closing h2 { margin: 0; font-size: clamp(2rem,4vw,3.2rem); line-height: 1.05; letter-spacing: -.05em; }
-    .closing p { margin: .8rem 0 0; color: rgba(255,255,255,.84); }
+    .closing p { margin: .8rem 0 0; color: rgba(255,255,255,.88); }
     .closing .button { justify-self: end; white-space: nowrap; }
     footer { border-top: 1px solid var(--line); padding: 1.5rem 0 2.5rem; color: var(--muted); font-size: .9rem; background: rgba(255,255,255,.3); }
     footer p { margin: .2rem 0; }
@@ -77,7 +84,8 @@
       .intro { margin-left: auto; margin-right: auto; }
       .actions { justify-content: center; }
       .hero-art { justify-self: center; width: min(100%,390px); }
-      .cards,.steps { grid-template-columns: 1fr; }
+      .cards,.steps,.values { grid-template-columns: 1fr; }
+      .faq { grid-template-columns: 1fr; }
       .closing { grid-template-columns: 1fr; text-align: center; }
       .closing .button { justify-self: center; }
     }
@@ -101,19 +109,19 @@
         <img class="brand-mark" src="Paraguayan Songbird Mascot on Branch.png" alt="ParaguayReliefFundCoin bird mascot">
         <span>ParaguayReliefFundCoin</span>
       </a>
-      <span class="nav-note">Paraguay-inspired · Community-led</span>
+      <span class="nav-note">Paraguay pride · Community energy</span>
     </div>
   </header>
 
   <section class="hero" id="home" aria-labelledby="page-title">
     <div class="hero-inner">
       <div class="hero-copy">
-        <p class="eyebrow">Nuestra tierra · Nuestra gente · Nuestro orgullo</p>
-        <h1 id="page-title">A little bird.<br>A big community.</h1>
-        <p class="intro">Meet ParaguayReliefFundCoin: a community-driven meme-token idea inspired by Paraguay, its people, and the power of showing up together. Come for the bird, stay for the community.</p>
+        <p class="eyebrow">Paraguay pride · Community energy · Big vision</p>
+        <h1 id="page-title">A bird with heart.<br>A community with momentum.</h1>
+        <p class="intro">ParaguayReliefFundCoin brings a bold bird, the colors of Paraguay, and a welcoming community spirit together in one memorable project. Celebrate the story, share the energy, and help shape what comes next.</p>
         <div class="actions">
           <a class="button" href="#project">Discover the project</a>
-          <a class="button secondary" href="#participate">How to get involved</a>
+          <a class="button secondary" href="#participate">Join the community</a>
         </div>
       </div>
       <div class="hero-art">
@@ -125,76 +133,123 @@
   <main class="wrap">
     <section class="section" id="project">
       <div class="section-head">
-        <span>The idea</span>
-        <h2>More than a ticker. A shared story.</h2>
-        <p>ParaguayReliefFundCoin is being built around a simple idea: bring people together through a memorable mascot and a community that can grow, create, and shape the project over time.</p>
+        <span>Our story</span>
+        <h2>One little bird. A lot of shared pride.</h2>
+        <p>Inspired by Paraguay and powered by community spirit, ParaguayReliefFundCoin is a meme-token project with a distinctive identity and room for people to bring their ideas, creativity, and enthusiasm.</p>
       </div>
       <div class="cards">
         <article class="card">
           <div class="card-icon" aria-hidden="true">✦</div>
-          <h3>Made for the community</h3>
-          <p>We want holders and supporters to help shape the project’s culture, conversations, and next steps. A strong community starts with participation—not promises.</p>
+          <h3>A community to grow with</h3>
+          <p>Every conversation, creative contribution, and new connection helps give the project its character. We want supporters to help shape a lively, welcoming community together.</p>
         </article>
         <article class="card">
           <div class="card-icon" aria-hidden="true">🇵🇾</div>
-          <h3>Rooted in Paraguay pride</h3>
-          <p>The colors, bird, and imagery celebrate the spirit of Paraguay and the pride people carry for home. The mascot is our symbol for a lively, welcoming community.</p>
+          <h3>Proudly inspired by Paraguay</h3>
+          <p>The colors, bird, and banner celebrate the pride and spirit people share for Paraguay. They give our community a bright, recognizable visual identity.</p>
         </article>
         <article class="card">
-          <div class="card-icon" aria-hidden="true">↗</div>
-          <h3>An open road ahead</h3>
-          <p>Our aspiration is to explore community-led ideas and possible peer-to-peer uses over time. Any future utility depends on technical, legal, and community realities—and is not guaranteed.</p>
+          <div class="card-icon" aria-hidden="true">⚡</div>
+          <h3>Built with a forward-looking spirit</h3>
+          <p>We’re excited to explore community ideas and possible ways the project could develop over time. The community can help guide the conversation as the project grows.</p>
         </article>
+      </div>
+      <div class="values" aria-label="Community values">
+        <div class="value"><span aria-hidden="true">✦</span> Pride in our inspiration</div>
+        <div class="value"><span aria-hidden="true">♡</span> A welcoming community</div>
+        <div class="value"><span aria-hidden="true">↗</span> Ideas for what’s next</div>
       </div>
     </section>
 
     <section class="section" id="participate">
       <div class="section-head">
         <span>Join the flock</span>
-        <h2>Get to know the project first.</h2>
-        <p>Whether you’re here for the art, the idea, or the token, start with the facts and follow project updates as the community grows.</p>
+        <h2>There’s more than one way to be part of it.</h2>
+        <p>Whether you’re here for the artwork, the Paraguay-inspired identity, or the token, there’s room to learn, connect, and take part at your own pace.</p>
       </div>
       <div class="steps">
         <article class="card step">
-          <h3>Learn what’s live</h3>
-          <p>Review the project information, token details, and any published contract address before taking action. If a detail hasn’t been officially announced, treat it as unverified.</p>
+          <h3>Explore the project</h3>
+          <p>Get familiar with the project’s published information and follow its progress. Staying curious helps the whole community build on a shared understanding.</p>
         </article>
         <article class="card step">
-          <h3>Join the conversation</h3>
-          <p>Take part in community discussions, share ideas, and help build a positive culture around the mascot and the project. Community growth is something we create together.</p>
+          <h3>Bring your energy</h3>
+          <p>Share thoughtful ideas, celebrate the mascot, create and share original community content, and help make the conversation positive and welcoming.</p>
         </article>
         <article class="card step">
-          <h3>Make your own decision</h3>
-          <p>If you choose to buy, sell, or hold the token, understand the risks first. Meme-token prices can move sharply, and you could lose some or all of the money you put in.</p>
+          <h3>Choose what feels right for you</h3>
+          <p>Some people may simply enjoy the community and its art; others may choose to buy, sell, or hold the token. Make your own informed choice based on your circumstances.</p>
         </article>
       </div>
       <aside class="card token-note">
-        <h3>Before you trade</h3>
-        <p>Only use token addresses and trading links published through verified project channels. Check the network and address carefully, beware of impersonators and direct-message offers, and never spend money you can’t afford to lose. No price, profit, liquidity, or future utility is promised.</p>
+        <h3>For anyone considering a trade</h3>
+        <p>Check the network and token address carefully, and use links you can independently verify. Crypto assets can be volatile, and you could lose the amount you put in. No price, profit, return, or future utility is guaranteed.</p>
       </aside>
     </section>
 
-    <section class="section">
+    <section class="section" id="future">
       <div class="section-head">
-        <span>Community impact</span>
-        <h2>Good intentions need clear follow-through.</h2>
-        <p>We’re interested in exploring ways the community might support charitable work in the future. Any recipient, donation amount, process, and proof would be shared transparently if a plan is established. No donation or organizational partnership is confirmed at this time.</p>
+        <span>Looking ahead</span>
+        <h2>Our next chapter is a community effort.</h2>
+        <p>We’re enthusiastic about the possibilities ahead—from more community-created art and conversations to exploring ideas for future project development. We’ll share concrete updates as plans take shape, and invite the community to help move the story forward.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">🎨</div>
+          <h3>Keep the creativity flying</h3>
+          <p>Grow the project’s visual world with original art, stories, and community contributions inspired by the bird and Paraguay’s vibrant colors.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">💬</div>
+          <h3>Make space for good ideas</h3>
+          <p>Listen, exchange ideas, and keep building a community where supporters can help shape the project’s culture and priorities.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">🌱</div>
+          <h3>Explore positive impact</h3>
+          <p>We’re interested in exploring responsible ways to support charitable efforts. Any future donation plan or partnership would be shared clearly once confirmed.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="section-head">
+        <span>Good to know</span>
+        <h2>A few quick answers.</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>What is ParaguayReliefFundCoin?</summary>
+          <p>It’s a community-driven meme-token project inspired by Paraguay, with a bright bird mascot and an emphasis on community participation.</p>
+        </details>
+        <details>
+          <summary>How can I support the project?</summary>
+          <p>Learn about it, join community conversations through channels you can verify, and share constructive ideas or creative work. You don’t need to buy a token to enjoy or contribute to the community.</p>
+        </details>
+        <details>
+          <summary>Is a donation or charity partnership confirmed?</summary>
+          <p>No donation commitment or organizational partnership is confirmed here. If a concrete plan is established, it should be announced with clear details.</p>
+        </details>
+        <details>
+          <summary>Is buying the token right for everyone?</summary>
+          <p>No. Buying, selling, or holding is a personal decision. Crypto assets are risky and volatile; take time to understand the risks and only make decisions that fit your circumstances.</p>
+        </details>
       </div>
     </section>
 
     <section class="closing" aria-label="Project invitation">
       <div>
-        <h2>There’s room in the flock.</h2>
-        <p>Explore the project, bring your questions, and help shape what this community becomes—one honest step at a time.</p>
+        <h2>Let’s make this story ours.</h2>
+        <p>Bring your pride, your curiosity, and your best ideas. The flock is stronger when the community grows together.</p>
       </div>
-      <a class="button" href="#project">Explore the project</a>
+      <a class="button" href="#project">Explore our story</a>
     </section>
   </main>
 
   <footer>
     <div class="wrap">
-      <p>ParaguayReliefFundCoin is an independent meme-token project, not affiliated with or endorsed by the Government of Paraguay, Banco Central del Paraguay, or any public institution.</p>
-      <p>Crypto assets are volatile and may lose value. This site is informational and is not financial advice or a promise of returns. Verify project details independently.</p>
+      <p>ParaguayReliefFundCoin is an independent meme-token project and is not affiliated with or endorsed by the Government of Paraguay, Banco Central del Paraguay, or any public institution.</p>
+      <p>Crypto assets are volatile and may lose value. This site is informational, not financial advice, and does not promise returns. Verify project details independently.</p>
     </div>
   </footer>
 </body>
